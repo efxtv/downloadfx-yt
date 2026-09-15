@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DownloadFX</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A5%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="wisp" id="wisp" aria-hidden="true"><i></i></div>
+
+  <div class="panel" id="panel">
+    <div class="panel-header" id="panel-header">
+      <span class="panel-wordmark">Download<span>FX</span></span>
+      <button id="minimize-btn" class="minimize-btn" title="Minimize" aria-label="Minimize">
+        <span class="tri-d">▼</span>
+      </button>
+    </div>
+
+    <div class="panel-body">
+      <div class="logo">
+        <span class="logo-badge">▼</span>
+        <div>
+          <h1>Download<span>FX</span></h1>
+        </div>
+      </div>
+
+      <form id="dl-form" autocomplete="off">
+        <div class="input-wrap">
+          <span class="input-icon">🔗</span>
+          <input
+            id="url-input"
+            type="url"
+            placeholder="Paste link here..."
+            spellcheck="false"
+            required
+          />
+        </div>
+        <button id="go-btn" type="submit">
+          <span class="go-text">Go</span>
+          <span class="go-spinner hidden">⏳</span>
+        </button>
+      </form>
+
+      <p id="status" class="status hidden"></p>
+    </div>
+  </div>
+
+  <button id="restore-btn" class="restore-btn hidden" title="Restore DownloadFX" aria-label="Restore">
+    <span>Download<span>FX</span></span>
+    <span class="tri-d2">▼</span>
+  </button>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Download options">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button id="modal-close" class="modal-close" title="Close" aria-label="Close">✕</button>
+
+      <div class="m-header">
+        <img id="m-thumb" class="m-thumb" alt="" />
+        <div class="m-info">
+          <span id="m-provider" class="provider-badge">🎥 video</span>
+          <h2 id="m-title"></h2>
+          <p class="m-meta">
+            <span id="m-uploader"></span>
+            <span id="m-duration" class="dot"></span>
+          </p>
+          <p id="m-note" class="m-note hidden"></p>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="video">🎬 Video</button>
+        <button class="tab" data-tab="audio">🎵 Audio</button>
+      </div>
+
+      <div id="tab-video" class="tab-panel active" data-tab="video">
+        <div id="video-list"></div>
+      </div>
+
+      <div id="tab-audio" class="tab-panel" data-tab="audio">
+        <div class="audio-intro">
+          <button id="mp3-btn" class="mp3-btn hidden">🎧 Best quality as MP3</button>
+        </div>
+        <button id="audio-toggle" class="audio-toggle">
+          <span>Available audio qualities</span>
+          <span class="count" id="audio-count"></span>
+          <span class="chevron">▾</span>
+        </button>
+        <div id="audio-list" class="accordion-collapsed"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="progress" class="progress hidden">
+    <div class="progress-card">
+      <div class="progress-title"><span id="progress-name"></span></div>
+      <div class="progress-track"><div id="progress-bar"></div></div>
+      <div class="progress-meta"><span id="progress-pct">0%</span><span id="progress-size"></span></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

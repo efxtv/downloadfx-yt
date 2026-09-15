@@ -1,0 +1,10 @@
+.venv/
+node_modules/
+server.log
+*.tmp
+*.mp4
+*.mp3
+*.webm
+bin/
+bgutil-provider/
+cookies.txt

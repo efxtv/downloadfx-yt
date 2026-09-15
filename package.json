@@ -1,0 +1,13 @@
+{
+  "name": "downloadfx",
+  "version": "1.0.0",
+  "description": "Universal video/audio downloader",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
