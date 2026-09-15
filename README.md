@@ -171,11 +171,24 @@ DownloadFX/
 
 ## Supported sources
 
-- YouTube, including Shorts and youtu.be links
-- Dailymotion
-- Direct video and audio file URLs (MP4, MKV, M3U8 and more)
-- Pages that embed video or audio via OpenGraph or HTML tags, handled by scraping
-- Anything else yt-dlp supports, subject to that site's access rules
+DownloadFX is powered by yt-dlp, so it reaches a very wide range of sites. Popular ones include:
+
+| Group | Sites |
+| --- | --- |
+| YouTube | YouTube, YouTube Music, Shorts, youtu.be links, playlists |
+| Video platforms | Dailymotion, Vimeo, Twitch (clips/VODs), Rumble, BitChute, Odysee, PeerTube, Bilibili, VK, streamable, 9GAG, Facebook Watch, Reddit, X / Twitter videos, TikTok |
+| Music & audio | SoundCloud, Bandcamp, Mixcloud, Spotify, TIDAL, Deezer, Apple Podcasts, NPR, archive.org audio |
+| Learning & talks | TED, Coursera, Udemy, Khan Academy, Skillshare, LinkedIn Learning |
+| News & TV | BBC, DW, France24, Al Jazeera, CBC, CNN, Euronews, Bloomberg, CNBC, NHK |
+| Direct links | Raw MP4, MKV, AVI, MOV, WEBM, M3U8/HLS streams, MP3, FLAC, WAV, M4A and most media files |
+| Generic pages | Any page that embeds video or audio via OpenGraph, video tags, or HTML5 media, handled automatically |
+
+Two tiers of reliability from this app:
+
+- **Tier 1: works without login or extra setup.** YouTube (including 4K via the built-in anti-bot unlock), Dailymotion, direct file links, and scraped pages. Verified working.
+- **Tier 2: supported but may require cookies or a clean IP.** Twitch, Vimeo, Instagram, TikTok, and some news sites may enforce login walls, geo-restrictions, or bot checks. These depend on the site, your IP, and whether you supply a cookies.txt file. The app reports the real reason when a site blocks a request.
+
+If the site you need is not listed, paste the link anyway. yt-dlp tracks hundreds of extractors and the app falls back to generic page scraping, so many unlisted sites still work.
 
 Cloudflare-heavy or login-walled sites (for example Vimeo, TikTok, and Instagram from restrictive IPs) may reject automated access. The app reports the real reason when a site blocks it.
 
